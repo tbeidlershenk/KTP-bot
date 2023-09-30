@@ -22,7 +22,7 @@ class BrotherhoodPoints(Cog):
         for keyword in triggers:
             if keyword in message.content:
                 logger.info("Sent brotherhood form")
-                await message.ctx.send(form)
+                await message.channel.send(form)
                 break
     
         

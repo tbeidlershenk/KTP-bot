@@ -11,6 +11,7 @@ services:
       dockerfile_inline: |
         FROM jlgingrich/disnake
         COPY ./exts ./exts
+        COPY ./bot.py ./bot.py
         RUN pip install -r requirements.txt
     env_file:
       - .env
