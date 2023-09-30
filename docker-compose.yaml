@@ -1,0 +1,19 @@
+name: disnake-hello
+
+volumes:
+  data:
+  logs:
+
+services:
+  core:
+    container_name: core
+    build:
+      dockerfile_inline: |
+        FROM jlgingrich/disnake
+        COPY ./exts ./exts
+        RUN pip install -r requirements.txt
+    env_file:
+      - .env
+    volumes:
+      - data:/app/data
+      - logs:/app/logs
