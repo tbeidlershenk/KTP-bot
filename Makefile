@@ -1,4 +1,4 @@
-TAG = jlgingrich/disnake-hello
+TAG = jlgingrich/ktp-qwerty
 
 latest:
 # Before building, make sure requirements are updated

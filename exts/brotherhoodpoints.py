@@ -1,16 +1,13 @@
 from common import logger
-from typing import Optional
-from disnake import Intents, client
-from disnake import Member
-from disnake import Message
-from disnake.ext.commands import slash_command, Bot
+from disnake.ext.commands import Bot
 from disnake.ext.commands.cog import Cog
 
-triggers = ["brotherhood", "point", "form"]
-form = "https://forms.gle/qiJxytzr2PhuhESj7"
+triggers = ["brotherhood point", "brotherhood points", "brotherhood pts"]
+form = r"https://forms.gle/qiJxytzr2PhuhESj7"
+response = f"The brotherhood point request form can be found here: {form}"
+
 
 class BrotherhoodPoints(Cog):
-
     def __init__(self, bot):
         self.bot = bot
 
@@ -19,15 +16,16 @@ class BrotherhoodPoints(Cog):
         if message.author.bot:
             return
 
-        for keyword in triggers:
-            if keyword in message.content:
-                logger.info("Sent brotherhood form")
-                await message.channel.send(form)
+        for trigger in triggers:
+            if trigger.lower() in message.content.lower():
+                logger.info(f"Sent brotherhood form to {message.author}")
+                await message.channel.send(response)
                 break
-    
-        
+
+
 def setup(bot: Bot):
     bot.add_cog(BrotherhoodPoints(bot))
+    bot.intents.message_content = True
 
 def teardown(bot: Bot):
     bot.remove_cog(BrotherhoodPoints.__cog_name__)

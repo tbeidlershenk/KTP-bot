@@ -1,4 +1,4 @@
-name: disnake-hello
+name: ktp-qwerty
 
 volumes:
   data:
@@ -12,7 +12,6 @@ services:
         FROM jlgingrich/disnake
         COPY ./exts ./exts
         COPY ./bot.py ./bot.py
-        RUN pip install -r requirements.txt
     env_file:
       - .env
     volumes:
