@@ -1,6 +1,6 @@
-# ktp-qwerty
+# KTP-bot
 
-This repository contains a Discord bot extension for [Disnake-Docker](https://github.com/jlgingrich/Disnake-Docker).
+This repository contains a Discord bot implemented using [Disnake-Docker](https://github.com/jlgingrich/Disnake-Docker).
 
 ## Use
 
