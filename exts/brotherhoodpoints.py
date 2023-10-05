@@ -1,4 +1,4 @@
-from common import logger
+from common import logger, bot_intents
 from disnake.ext.commands import Bot
 from disnake.ext.commands.cog import Cog
 
@@ -25,7 +25,7 @@ class BrotherhoodPoints(Cog):
 
 def setup(bot: Bot):
     bot.add_cog(BrotherhoodPoints(bot))
-    bot.intents.message_content = True
+    bot_intents(bot).message_content = True
 
 def teardown(bot: Bot):
     bot.remove_cog(BrotherhoodPoints.__cog_name__)
