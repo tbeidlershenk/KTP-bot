@@ -1,0 +1,8 @@
+{
+    "delete_after_seconds": 120,
+    "default_warning": "You attempted to post a message that violates our DIMEs policy. For more information, please reach out to a board member.", 
+    "triggers": {
+        "venmo": null,
+        "shady": null
+    }
+}
