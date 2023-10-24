@@ -33,7 +33,7 @@ class AutoResponder(Cog):
         for pattern, response in self.triggers.items():
             match = pattern.search(message.content)
             if match:
-                logger.info(f"Responded to {match.string!r} from {message.author}")
+                logger.info(f"Responded to {message.author}")
                 await message.reply(
                     response,
                     fail_if_not_exists=False,
