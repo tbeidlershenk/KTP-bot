@@ -1,7 +1,6 @@
 name: ktp-qwerty
 
 volumes:
-  data:
   logs:
 
 services:
@@ -10,10 +9,8 @@ services:
     build:
       dockerfile_inline: |
         FROM jlgingrich/disnake
-        COPY ./exts ./exts
-        COPY ./data ./data
+        COPY ./plugins /app/core/plugins/
     env_file:
       - .env
     volumes:
-      - data:/app/data
       - logs:/app/logs
